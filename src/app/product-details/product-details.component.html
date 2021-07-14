@@ -1,0 +1,19 @@
+
+  <div class="thumbnail">
+    <img class="product-item" [src]="data.photo" alt="">
+    <div class="caption">
+      <h3>{{data.title | uppercase }} - {{data.price | currency:'EUR'}}</h3>
+      <p>{{data.description}}</p>
+      <div class="lastOne" *ngIf="isTheLast()">DERNIER DISPONIBLE</div>
+      <button class="btn btn-primary" (click)="updateBasket()" >Add to Cart</button>
+    </div>
+  </div>
+
+  <hr>
+
+<div class="row text-center" *ngIf="data.stock > 0 ">
+  <ng-container *ngFor="let product of products | sort:sortKey">
+    <app-product *ngIf="isAvailable(product)" [data]="product"
+                 (addToBasket)="updatePrice($event)"></app-product>
+  </ng-container>
+</div>

@@ -17,7 +17,8 @@ export class HomeComponent {
     private productService: ProductService,
     private customerService: CustomerService,
     @Inject('welcomeMsg') public title: string
-  ) {
+  )
+  {
     productService.getProducts().subscribe(products => {
       this.products = products;
     });

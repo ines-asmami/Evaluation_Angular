@@ -18,6 +18,7 @@ export class ProductService {
   }
 
   isTheLast(product: Product): boolean {
+    console.log("DERNIER DISPONIBLE");
     return product.stock === 1;
   }
 
@@ -28,5 +29,11 @@ export class ProductService {
   decreaseStock(product: Product) {
     product.stock -= 1;
   }
+
+  getDetails(id): Observable<Product> {
+    return this.http.get<Product>('http://localhost:8080/rest/products/' + id);
+  }
+
+
 
 }

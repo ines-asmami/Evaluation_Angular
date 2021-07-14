@@ -1,3 +1,16 @@
 .last {
   background-color: rgba(255, 0, 0, 0.4);
 }
+
+.lastOne {
+  font-weight: bold;
+  color: red;
+}
+
+img.grey, img.grey{
+  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+  -moz-filter: grayscale(80%);
+  -ms-filter: grayscale(80%);
+  -o-filter: grayscale(80%);
+}
